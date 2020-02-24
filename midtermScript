@@ -1,0 +1,23 @@
+#!/bin/bash
+touch jessicaOrtega.txt
+mkdir -p /var/public/sales/data 
+mkdir /var/public/sales/projects
+mkdir -p /var/public/techs/data 
+mkdir /var/public/techs/projects
+mkdir -p /var/public/devops/data 
+mkdir /var/public/devops/projects
+groupadd sales
+groupadd techs
+groupadd devops
+chgrp -R sales /var/public/sales
+chgrp -R techs /var/public/techs
+chgrp -R devops /var/public/devops 
+chmod -R 2770 /var/public/sales
+chmod -R 2770 /var/public/techs
+chmod -R 2770 /var/public/devops 
+cp -R /etc/skel /etc/skel-sales
+cp -R /etc/skel /etc/skel-techs
+cp -R /etc/skel /etc/skel-devops
+
+
+
